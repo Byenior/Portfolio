@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Airbnb Clone</title>
+
+
+    <style>
+        * {
+            font-family: "roboto", sans-serif;
+            box-sizing: border-box;
+            text-decoration: none;
+        }
+
+        body {
+            margin: 0px;
+        }
+
+        .welcome {
+            width: 100%;
+            height: 60px;
+            background-color: black;
+            text-align: center;
+            padding: 20px 40px;
+
+
+        }
+
+        .white {
+            color: white
+        }
+
+        .black {
+
+            color: black;
+        }
+
+        #welcome-font {
+            color: #DDDDD6;
+            width: 100%;
+            text-decoration: underline;
+        }
+
+        a {
+            color: black;
+
+        }
+
+        u {
+            text-decoration: underline;
+        }
+
+        .AA {
+            font-size: 58px;
+            font-weight: bold;
+        }
+
+        /* เริ่มพาร์ท1 */
+
+        .part1 {
+            width: 100%;
+            height: 80vh;
+            background-image: url(https://a0.muscache.com/im/pictures/cf39f4c4-e860-43d4-85be-deddd7b2da90.jpg?im_w=1440);
+            background-size: cover;
+            background-position: center;
+
+            color: white;
+        }
+
+        .header {
+            padding: 0 80px;
+            place-items: center;
+            align-content: center;
+            display: flex;
+        }
+
+        .logo {
+            background-color: transparent;
+            display: flex;
+            flex: 1;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        h2 {
+            padding: 5px;
+        }
+
+        .logo2 {
+            background-color: transparent;
+            display: flex;
+            flex: 1;
+            align-items: center;
+            padding: 20px;
+            font-size: 18px;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .web-tab {
+            align-content: center;
+            padding: 10px;
+            color: white;
+            text-align: center;
+        }
+
+        .web-tab:hover {
+            border-bottom: 1px solid white;
+        }
+
+        .logo3 {
+            flex: 1;
+            display: flex;
+            align-content: center;
+            justify-content: flex-end;
+            cursor: pointer;
+        }
+
+        .logo-3 {
+            padding: 10px 12px;
+            color: white;
+
+        }
+
+        .logo-4 {
+            padding: 10px 12px;
+            color: white;
+            max-width: 40px;
+            max-height: 40px;
+
+        }
+
+        .logo-3:hover {
+            border: none;
+            background-color: rgba(250, 235, 215, 0.200);
+            border-radius: 72px;
+
+        }
+
+        .logo-4:hover {
+            border: none;
+            background-color: rgba(250, 235, 215, 0.200);
+            border-radius: 72px;
+
+        }
+
+        .profile {
+            border: none;
+            border-radius: 36px;
+            height: 42px;
+
+            min-width: 77px;
+            position: relative;
+            margin-left: 20px;
+
+            display: inline-block;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .menu {
+            border: none;
+            width: 100%;
+            height: 65px;
+            position: relative;
+            justify-items: center;
+        }
+
+        .blank {
+            height: 66px;
+            width: 850px;
+            background-color: white;
+            margin: auto;
+            border-radius: 36px;
+            display: flex;
+            align-items: center;
+            padding: 5px;
+            justify-content: space-around;
+
+        }
+
+        .location {
+            color: black;
+            padding: 0px 40px 0px 20px;
+            border: none;
+            margin: 10px;
+        }
+
+        .check {
+            color: black;
+            border-left: 1px solid rgba(0, 0, 0, 0.2);
+            padding: 0px 40px 0px 20px;
+        }
+
+        .guests {
+            color: black;
+            border-left: 1px solid rgba(0, 0, 0, 0.2);
+            padding: 0px 40px 0px 20px;
+            width: 170px;
+        }
+
+        .search {
+            background-color: red;
+            border-radius: 36px;
+            padding: 10px;
+            width: 45px;
+            height: 45px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 10px;
+        }
+
+        .location:hover,
+        .check:hover,
+        .guests:hover {
+            background-color: rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            border-radius: 36px;
+            padding: 10px 40px 10px 20px;
+        }
+
+        input[type="textbox"],
+        input[type="date"],
+        input[type="number"] {
+            border: none;
+            color: rgb(0, 0, 0, 0.5);
+
+        }
+
+        input[type="number"] {
+            width: 100%;
+
+        }
+
+        .Plan {
+            width: 90%;
+            height: 100%;
+
+            margin: auto;
+            align-items: flex-start;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .button-A {
+            padding: 10px 20px;
+            border-radius: 10px;
+            margin: 10px 0;
+            border: none;
+            font-weight: bold;
+            cursor: pointer;
+            background-color: #F0F0F0;
+        }
+
+        .button-A:hover {
+            background-color: #919191;
+        }
+
+        /* จบพาร์ท1 */
+        /* เริ่มพาร์ท2 */
+
+        .part2 {
+            background-color: white;
+            width: 100%;
+            height: 100%;
+
+        }
+
+        .section-1 {
+            margin: 50px 80px;
+            display: flex;
+            flex-direction: column;
+
+
+        }
+
+        .img-70 {
+            width: 70px;
+            border-radius: 10px;
+            margin: 0px 10px;
+
+        }
+
+        .pic-8 {
+            display: flex;
+            width: 100%;
+            align-items: center;
+            justify-content: space-around;
+            margin: 0px 0px;
+            flex-direction: row;
+
+            padding: 0px 0px;
+
+        }
+
+        .pic-82 {
+            display: flex;
+            width: 100%;
+            align-items: center;
+            justify-content: space-around;
+            margin: 10px 0px;
+            flex-direction: row;
+
+            padding: 10px 0px;
+        }
+
+        .picpic,
+        .pica {
+            display: flex;
+            width: 25%;
+            align-items: center;
+
+            color: black;
+        }
+
+
+        .pica:hover {
+            background-color: rgba(0, 0, 0, 0.1);
+
+
+        }
+
+        .Acc {
+            width: 100%;
+            font-size: 30px;
+            font-weight: bold;
+            margin: 50px 80px;
+            padding: 20px 0px;
+        }
+
+        .pic-4 {
+            display: flex;
+            width: 90%;
+            margin: 0px 80px 50px 80px;
+        }
+
+        .pic-44 {
+            margin: 5px;
+            cursor: pointer;
+            width: 100%;
+
+        }
+
+        .pic4 {
+            border-radius: 20px;
+            width: 100%;
+
+        }
+
+        .a1 {
+            font-weight: bold;
+        }
+
+        /* ส่วนที่3*/
+        .part3 {
+            background-color: black;
+            width: 100%;
+
+        }
+
+        #unique {
+            color: white;
+            font-size: 32px;
+            font-weight: bold;
+        }
+
+        #meet {
+            color: white;
+            font-size: 14px;
+        }
+
+        .pic3 {
+            width: 90%;
+
+            margin: 50px 80px;
+            padding: 50px;
+
+        }
+
+
+        .pic-3 {
+            display: flex;
+            width: 100%;
+            height: 80%;
+            margin: 0px 0px 0px 0px;
+
+        }
+
+        .pic33 {
+            flex: 1;
+            border-radius: 10px;
+            width: 100%;
+        }
+
+        /*ส่วนที่4*/
+        .part4 {
+
+            width: 100%;
+
+
+        }
+
+        .part44 {
+
+            margin: 50px 80px;
+        }
+
+        .part5 {
+            background-color: #F7F7F7;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+
+            width: 100%;
+
+        }
+
+        .list {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin: 20px 0px;
+
+            font-size: 12px;
+
+        }
+
+        ul {
+            display: flex;
+            flex-direction: column;
+            margin: 0px 50px;
+
+        }
+
+        li {
+            text-decoration: none;
+            list-style: none;
+            margin: 7px 0px;
+            font-size: 14px;
+        }
+
+        .footer {
+            height: 70px;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+            margin: 10px 80px;
+            display: flex;
+            flex-direction: row;
+
+
+        }
+
+        .licence {
+            flex: 2;
+            font-size: 13px;
+            margin: 5px;
+        }
+
+        .eng {
+
+            display: flex;
+            justify-content: flex-end;
+            text-align: end;
+            flex: 1;
+            font-weight: bold;
+            margin: 5px;
+            font-size: 14px;
+        }
+
+        .logo9 {
+            background-color: transparent;
+            display: flex;
+            flex: 1;
+            margin-top: 5px;
+            justify-content: flex-end;
+
+            cursor: pointer;
+        }
+
+        .mini {
+            margin: 4px;
+            width: 16px;
+            height: 16px;
+        }
+
+        #thb {
+            margin-left: 5px;
+        }
+
+
+        .part6 {
+            width: 100%;
+            height: 40px;
+            background-color: black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            flex: end;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="welcome">
+        <a id="welcome-font" href="#">Welcome to Airbnb. Find the best places to stay in the world.</a>
+    </div>
+    <div class="part1">
+
+        <div class="header">
+            <div class="logo">
+                <svg width="30" height="32" fill="#FFFFFF">
+                    <path
+                        d="M29.24 22.68c-.16-.39-.31-.8-.47-1.15l-.74-1.67-.03-.03c-2.2-4.8-4.55-9.68-7.04-14.48l-.1-.2c-.25-.47-.5-.99-.76-1.47-.32-.57-.63-1.18-1.14-1.76a5.3 5.3 0 00-8.2 0c-.47.58-.82 1.19-1.14 1.76-.25.52-.5 1.03-.76 1.5l-.1.2c-2.45 4.8-4.84 9.68-7.04 14.48l-.06.06c-.22.52-.48 1.06-.73 1.64-.16.35-.32.73-.48 1.15a6.8 6.8 0 007.2 9.23 8.38 8.38 0 003.18-1.1c1.3-.73 2.55-1.79 3.95-3.32 1.4 1.53 2.68 2.59 3.95 3.33A8.38 8.38 0 0022.75 32a6.79 6.79 0 006.75-5.83 5.94 5.94 0 00-.26-3.5zm-14.36 1.66c-1.72-2.2-2.84-4.22-3.22-5.95a5.2 5.2 0 01-.1-1.96c.07-.51.26-.96.52-1.34.6-.87 1.65-1.41 2.8-1.41a3.3 3.3 0 012.8 1.4c.26.4.45.84.51 1.35.1.58.06 1.25-.1 1.96-.38 1.7-1.5 3.74-3.21 5.95zm12.74 1.48a4.76 4.76 0 01-2.9 3.75c-.76.32-1.6.41-2.42.32-.8-.1-1.6-.36-2.42-.84a15.64 15.64 0 01-3.63-3.1c2.1-2.6 3.37-4.97 3.85-7.08.23-1 .26-1.9.16-2.73a5.53 5.53 0 00-.86-2.2 5.36 5.36 0 00-4.49-2.28c-1.85 0-3.5.86-4.5 2.27a5.18 5.18 0 00-.85 2.21c-.13.84-.1 1.77.16 2.73.48 2.11 1.78 4.51 3.85 7.1a14.33 14.33 0 01-3.63 3.12c-.83.48-1.62.73-2.42.83a4.76 4.76 0 01-5.32-4.07c-.1-.8-.03-1.6.29-2.5.1-.32.25-.64.41-1.02.22-.52.48-1.06.73-1.6l.04-.07c2.16-4.77 4.52-9.64 6.97-14.41l.1-.2c.25-.48.5-.99.76-1.47.26-.51.54-1 .9-1.4a3.32 3.32 0 015.09 0c.35.4.64.89.9 1.4.25.48.5 1 .76 1.47l.1.2c2.44 4.77 4.8 9.64 7 14.41l.03.03c.26.52.48 1.1.73 1.6.16.39.32.7.42 1.03.19.9.29 1.7.19 2.5z">
+                    </path>
+                </svg>
+                <h2>airbnb</h2>
+            </div>
+            <div class="logo2">
+                <a class="web-tab"><span>Home</span></a>
+                <a class="web-tab"><span>Locations</span></a>
+                <a class="web-tab"><span>About Us</span></a>
+            </div>
+            <div class="logo3">
+                <a class="logo-3">
+                    <span>Become a Host</span>
+                </a>
+                <a class="logo-4">
+                    <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation"
+                        focusable="false"
+                        style=" height: 16px; width: 16px; fill: currentcolor; position: relative; top: 2px;">
+                        <path
+                            d="m8.002.25a7.77 7.77 0 0 1 7.748 7.776 7.75 7.75 0 0 1 -7.521 7.72l-.246.004a7.75 7.75 0 0 1 -7.73-7.513l-.003-.245a7.75 7.75 0 0 1 7.752-7.742zm1.949 8.5h-3.903c.155 2.897 1.176 5.343 1.886 5.493l.068.007c.68-.002 1.72-2.365 1.932-5.23zm4.255 0h-2.752c-.091 1.96-.53 3.783-1.188 5.076a6.257 6.257 0 0 0 3.905-4.829zm-9.661 0h-2.75a6.257 6.257 0 0 0 3.934 5.075c-.615-1.208-1.036-2.875-1.162-4.686l-.022-.39zm1.188-6.576-.115.046a6.257 6.257 0 0 0 -3.823 5.03h2.75c.085-1.83.471-3.54 1.059-4.81zm2.262-.424c-.702.002-1.784 2.512-1.947 5.5h3.904c-.156-2.903-1.178-5.343-1.892-5.494l-.065-.007zm2.28.432.023.05c.643 1.288 1.069 3.084 1.157 5.018h2.748a6.275 6.275 0 0 0 -3.929-5.068z">
+                        </path>
+                    </svg>
+
+                </a>
+
+                <button class="profile">
+                    <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation"
+                        focusable="false"
+                        style=" fill: none; height: 16px; width: 16px; stroke: currentcolor; stroke-width: 3; overflow: visible; position: relative; bottom: 4px;">
+                        <g fill="none" fill-rule="nonzero">
+                            <path d="m2 16h28"></path>
+                            <path d="m2 24h28"></path>
+                            <path d="m2 8h28"></path>
+                        </g>
+                    </svg>
+                    <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation"
+                        focusable="false"
+                        style="height: 29px; width: 29px; fill: currentcolor; position: relative; left: 6px; top:2px;">
+                        <g fill="gray" fill-rule="nonzero">
+                            <path
+                                d="m16 .7c-8.437 0-15.3 6.863-15.3 15.3s6.863 15.3 15.3 15.3 15.3-6.863 15.3-15.3-6.863-15.3-15.3-15.3zm0 28c-4.021 0-7.605-1.884-9.933-4.81a12.425 12.425 0 0 1 6.451-4.4 6.507 6.507 0 0 1 -3.018-5.49c0-3.584 2.916-6.5 6.5-6.5s6.5 2.916 6.5 6.5a6.513 6.513 0 0 1 -3.019 5.491 12.42 12.42 0 0 1 6.452 4.4c-2.328 2.925-5.912 4.809-9.933 4.809z">
+                            </path>
+                        </g>
+                    </svg>
+
+                </button>
+
+            </div>
+
+        </div>
+
+        <div class="menu">
+            <div class="blank">
+                <div>
+
+                    <div class="location">Location
+                        <input type="textbox" placeholder="Where are you going?">
+                    </div>
+
+                </div>
+
+                <div>
+
+                    <div class="check">Check-in
+                        <input type="date" placeholder="Date">
+                    </div>
+
+                </div>
+
+                <div>
+
+                    <div class="check">Check-out
+                        <input type="date" placeholder="Date">
+                    </div>
+
+                </div>
+
+                <div>
+
+                    <div class="guests">Guests
+                        <input type="number" name="Guests" Value="number" min="1" Max="50" placeholder="Add Guests" />
+                    </div>
+
+                </div>
+                <a href="#">
+                    <div class="search">
+                        <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"
+                            style="display:block;fill:none;height:16px;width:16px;stroke:#FFFFFF;stroke-width:4;overflow:visible;"
+                            aria-hidden="true" role="presentation" focusable="false">
+                            <g fill="none">
+                                <path
+                                    d="m13 24c6.0751322 0 11-4.9248678 11-11 0-6.07513225-4.9248678-11-11-11-6.07513225 0-11 4.92486775-11 11 0 6.0751322 4.92486775 11 11 11zm8-3 9 9">
+                                </path>
+                            </g>
+                        </svg>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+        <div class="Plan">
+            <span class="AA">Plan Your Trip,</span>
+            <span class="AA">Nearby Places</span>
+            <button class="button-A">Explore Locations</button>
+        </div>
+    </div>
+    <div class="part2">
+        <div>
+            <section class="section-1">
+                <div class="pic-8">
+
+                    <a class="pica" href="#">
+                        <img src="C:\Users\nowon\Desktop\Web Developer\Project\airbnb\Airbnb Clone Resource\Locations-1.png"
+                            class="img-70">
+                        <span>
+                            <b>Khao Yai</b><br>
+                            <span>30 Minutes by Car</span>
+                        </span>
+                    </a>
+
+
+                    <a class="pica" href="#">
+                        <img src="C:\Users\nowon\Desktop\Web Developer\Project\airbnb\Airbnb Clone Resource\Locations-2.png"
+                            class="img-70">
+                        <span>
+                            <b>Chiangrai</b><br>
+                            <span>1 Hour by Car</span>
+                        </span>
+                    </a>
+
+
+                    <a class="pica" href="#">
+                        <img src="C:\Users\nowon\Desktop\Web Developer\Project\airbnb\Airbnb Clone Resource\Locations-3.png"
+                            class="img-70">
+                        <span>
+                            <b>Samui</b><br>
+                            <span>3.5 Hours by Car</span>
+                        </span>
+                    </a>
+
+
+                    <a class="pica" href="#">
+                        <img src="C:\Users\nowon\Desktop\Web Developer\Project\airbnb\Airbnb Clone Resource\Locations-4.png"
+                            class="img-70">
+                        <span>
+                            <b>Samet</b><br>
+                            <span>30 Minutes by Car</span>
+                        </span>
+                    </a>
+
+                </div>
+
+                <div class="pic-82">
+
+                    <a class="pica" href="#">
+                        <img src="C:\Users\nowon\Desktop\Web Developer\Project\airbnb\Airbnb Clone Resource\Location 5.png"
+                            class="img-70">
+                        <span>
+                            <b>Pathum Thani</b><br>
+                            <span>2 Hours by Car</span>
+                        </span>
+                    </a>
+
+
+                    <a class="pica" href="#">
+                        <img src="C:\Users\nowon\Desktop\Web Developer\Project\airbnb\Airbnb Clone Resource\Location-6.png"
+                            class="img-70">
+                        <span>
+                            <b>Pattaya</b><br>
+                            <span>45 Minutes by Car</span>
+                        </span>
+                    </a>
+
+
+                    <a class="pica" href="#">
+                        <img src="C:\Users\nowon\Desktop\Web Developer\Project\airbnb\Airbnb Clone Resource\Location-7.png"
+                            class="img-70">
+                        <span>
+                            <b>Rayong</b><br>
+                            <span>45 Minutes by Car</span>
+                        </span>
+                    </a>
+
+
+                    <a class="pica" href="#">
+                        <img src="C:\Users\nowon\Desktop\Web Developer\Project\airbnb\Airbnb Clone Resource\Location-8.png"
+                            Class="img-70">
+                        <span>
+                            <b>Cahiangmai</b><br>
+                            <span>1 Hour by Car</span>
+                        </span>
+                    </a>
+
+                </div>
+            </section>
+        </div>
+
+        <span class="Acc">Accomodations</span>
+        <section class="pic-4">
+            <div class="pic-44">
+                <a href="#" class="a1"><img class="pic4"
+                        src="C:\Users\nowon\Desktop\Web Developer\Project\airbnb\Airbnb Clone Resource\Accomodations - 1.png">
+                    <br>Houses</a>
+            </div>
+            <div class="pic-44">
+                <a href="#" class="a1"><img class="pic4"
+                        src="C:\Users\nowon\Desktop\Web Developer\Project\airbnb\Airbnb Clone Resource\Accomodations-3.png">
+                    <br>Log Cabins & Country Houses</a>
+            </div>
+            <div class="pic-44">
+                <a href="#" class="a1"><img class="pic4"
+                        src="C:\Users\nowon\Desktop\Web Developer\Project\airbnb\Airbnb Clone Resource\Accomodations-2.png">
+                    <br>Unique Spaces</a>
+            </div>
+            <div class="pic-44">
+                <a href="#" class="a1"><img class="pic4"
+                        src="C:\Users\nowon\Desktop\Web Developer\Project\airbnb\Airbnb Clone Resource\Accomodations-4.png">
+                    <br>Hot tubs</a>
+            </div>
+        </section>
+    </div>
+
+    <div class="part3">
+        <div class="pic3">
+            <span id="unique">Unique Experiences and Activities</span><br>
+            <span id="meet">Meet with local experts.</span>
+
+            <section class="pic-3">
+                <div class="pic-44">
+                    <a href="#"><img class="pic33"
+                            src="C:\Users\nowon\Desktop\Web Developer\Project\airbnb\Airbnb Clone Resource\Virtual Experience.png">
+                        <br><b class="white">Virtual Experience</b>
+                        <br><span class="white">Travel the world from home</span>
+                    </a>
+                </div>
+                <div class="pic-44">
+                    <a href="#"><img class="pic33"
+                            src="C:\Users\nowon\Desktop\Web Developer\Project\airbnb\Airbnb Clone Resource\Experience.png">
+                        <br><b class="white">Experience</b>
+                        <br><span class="white">Experience from Anywhere!</span>
+                    </a>
+                </div>
+                <div class="pic-44">
+                    <a href="#"><img class="pic33"
+                            src="C:\Users\nowon\Desktop\Web Developer\Project\airbnb\Airbnb Clone Resource\Adventure.png">
+                        <br><b class="white">Adventure</b>
+                        <br><span class="white">Multi-day trip with accomodation and meals.</span>
+                    </a>
+                </div>
+            </section>
+        </div>
+
+    </div>
+
+    <div class="part4">
+        <div class="part44">
+            <h1>Be a part of the millions of Airbnb Host Community.</h1>
+
+            <section class="pic-3">
+                <div class="pic-44">
+                    <a href="#"><img class="pic33"
+                            src="C:\Users\nowon\Desktop\Web Developer\Project\airbnb\Airbnb Clone Resource\Become a Hostel Host .png">
+                        <br><b class="black">Become a Hostel Host</b>
+                    </a>
+                </div>
+                <div class="pic-44">
+                    <a href="#"><img class="pic33"
+                            src="C:\Users\nowon\Desktop\Web Developer\Project\airbnb\Airbnb Clone Resource\Host a Virtual Experience.png">
+                        <br><b class="black">Host a Virtual Experience</b>
+                    </a>
+                </div>
+                <div class="pic-44">
+                    <a href="#"><img class="pic33"
+                            src="C:\Users\nowon\Desktop\Web Developer\Project\airbnb\Airbnb Clone Resource\Host Your Experience.png">
+                        <br><b class="black">Host youur Experience</b>
+                    </a>
+                </div>
+            </section>
+
+
+        </div>
+
+
+    </div>
+
+    <div class="part5">
+        <div class="list">
+            <ul>
+                <b>Introduce</b>
+                <li><a href="#">Guide to Use Airbnb</a></li>
+                <li><a href="#">Newsroom</a></li>
+                <li><a href="#">Investor Information</a></li>
+                <li><a href="#">Airbnb Plus</a></li>
+                <li><a href="#">Airbnb Luxe</a></li>
+                <li><a href="#">Hotel Tonight</a></li>
+                <li><a href="#">Airbnb Business Program</a></li>
+                <li><a href="#">Olypic</a></li>
+                <li><a href="#">Jobs</a></li>
+
+            </ul>
+            <ul>
+                <b>Community</b>
+                <li><a href="#"> Diversity</a></li>
+                <li><a href="#">Accessibliity</a></li>
+                <li><a href="#">Airbnb Associate</a></li>
+                <li><a href="#">Accomodation for Aid Workers</a></li>
+                <li><a href="#">Invite Friends</a></li>
+                <li><a href="#">Airbnb.org</a></li>
+            </ul>
+            <ul>
+                <b>To Host</b>
+
+                <li><a href="#">Accomodation Hosting</a></li>
+                <li><a href="#">Host a Virtual Experience</a></li>
+                <li><a href="#">Host Your Experience</a></li>
+                <li><a href="#">Responsible Hosting</a></li>
+                <li><a href="#">Data Center</a></li>
+                <li><a href="#">Community Center</a></li>
+            </ul>
+            <ul>
+                <b>Airbnb Support</b>
+                <li><a href="#"> Airbnb's response to COVID-19</a></li>
+                <li><a href="#"> Help Center</a></li>
+                <li><a href="#"> Reservation Cancellation</a></li>
+                <li><a href="#"> Airbnb Neighbor Complaint Support</a></li>
+                <li><a href="#"> Trust and Safety</a></li>
+            </ul>
+
+
+        </div>
+        <div class="footer">
+            <div class="licence">
+                <span>© 2021 Airbnb, Inc. All rights reserved</span><br>
+                <a href="#">Privacy Policy</a> ·
+                <a href="#">Terms of Service</a> ·
+                <a href="#">Site Map</a> ·
+                <a href="#">Refund Policy</a> ·
+                <a href="#">Company Details</a> ·
+            </div>
+
+            <div class="eng">
+                <span>
+                    <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation"
+                        focusable="false"
+                        style=" height: 16px; width: 16px; fill: currentcolor; position: relative; top: 2px;">
+                        <path
+                            d="m8.002.25a7.77 7.77 0 0 1 7.748 7.776 7.75 7.75 0 0 1 -7.521 7.72l-.246.004a7.75 7.75 0 0 1 -7.73-7.513l-.003-.245a7.75 7.75 0 0 1 7.752-7.742zm1.949 8.5h-3.903c.155 2.897 1.176 5.343 1.886 5.493l.068.007c.68-.002 1.72-2.365 1.932-5.23zm4.255 0h-2.752c-.091 1.96-.53 3.783-1.188 5.076a6.257 6.257 0 0 0 3.905-4.829zm-9.661 0h-2.75a6.257 6.257 0 0 0 3.934 5.075c-.615-1.208-1.036-2.875-1.162-4.686l-.022-.39zm1.188-6.576-.115.046a6.257 6.257 0 0 0 -3.823 5.03h2.75c.085-1.83.471-3.54 1.059-4.81zm2.262-.424c-.702.002-1.784 2.512-1.947 5.5h3.904c-.156-2.903-1.178-5.343-1.892-5.494l-.065-.007zm2.28.432.023.05c.643 1.288 1.069 3.084 1.157 5.018h2.748a6.275 6.275 0 0 0 -3.929-5.068z">
+                        </path>
+                    </svg>
+                    <a href="#"><u>English (EN)</u> </a>
+                    <a href="#" id="thb">฿ <u>THB </u> </a>
+                </span>
+            </div>
+
+            <div class="logo9">
+                <a href="#"><img class="mini"
+                        src="C:\Users\nowon\Desktop\Web Developer\Project\airbnb\Airbnb Clone Resource\FB.png"></a>
+                <a href="#"><img class="mini"
+                        src="C:\Users\nowon\Desktop\Web Developer\Project\airbnb\Airbnb Clone Resource\twitter.png"></a>
+                <a href="#"><img class="mini"
+                        src="C:\Users\nowon\Desktop\Web Developer\Project\airbnb\Airbnb Clone Resource\images.png"></a>
+
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+    <div class="part6">
+        <h2>Created by Nathaphong Wongsri</h2>
+    </div>
+
+</body>
+
+</html>

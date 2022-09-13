@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Welcome to my Portfolio</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Montserrat', sans-serif, Tahoma, Verdana, sans-serif;
+      color: white;
+      text-decoration: none;
+    }
+
+    /*ปุ่ม*/
+    input[type="checkbox"] {
+      display: none;
+    }
+
+    .swith {
+      display: flex;
+      width: 60px;
+      height: 34px;
+      background-color: transparent;
+      margin-top: 8px;
+
+    }
+
+
+
+    .slider {
+      flex: 1;
+      border-radius: 36px;
+      border: 2px solid rgb(134, 134, 134);
+      background-color: rgb(255, 255, 255);
+      transition: all 0.5s ease-in-out;
+    }
+
+    .slider::before {
+      display: block;
+      content: "";
+      width: 28px;
+      height: 28px;
+      margin-top: -1px;
+      margin-left: -4px;
+      border-radius: 58px;
+
+      border: 2px solid gainsboro;
+      background-color: white;
+      transition: all 0.3s ease-in-out;
+      box-shadow: 0px 2px 8px -2px rgb(255, 0, 0, 0.3);
+
+    }
+
+    input[type="checkbox"]:checked+.slider {
+      background-color: rgb(37, 37, 37);
+      border-color: transparent;
+      border: 2px solid rgb(48, 48, 48);
+    }
+
+    input[type="checkbox"]:checked+.slider::before {
+      transform: translateX(90%);
+      border-color: transparent;
+    }
+
+    /*ปุ่ม*/
+    .black {
+      color: black;
+      font-weight: bold;
+    }
+
+    body {
+      background-color: rgb(0, 0, 0);
+      height: 100%;
+      width: 100vw;
+      margin: 0px;
+      padding: 0px;
+      display: flex;
+    }
+
+    .top {
+      width: 100%;
+      height: 50px;
+      background-color: rgb(31, 31, 31);
+      position: fixed;
+      z-index: 3;
+      box-shadow: 1px 5px 5px rgb(0, 0, 0, 0.5);
+      display: flex;
+      justify-content: center;
+      flex: 1;
+    }
+
+
+    #mode {
+      display: flex;
+
+
+      position: absolute;
+      right: 0;
+      margin-right: 3%;
+    }
+
+    #to-top {
+      width: 42px;
+      height: 42px;
+      margin-left: 94vw;
+      margin-top: 90vh;
+      z-index: 3;
+
+
+      border-radius: 36px;
+      background-color: white;
+
+      justify-content: center;
+      align-content: center;
+
+      position: fixed;
+    }
+
+    #to-top:hover {
+      background-color: rgb(196, 196, 196);
+
+    }
+
+    .name {
+      padding: 10px;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 24px;
+      
+      font-weight: bold;
+      color: white;
+      text-shadow: 0 0 0.5em #87F;
+    }
+
+    .left-side {
+      background-color: rgb(#000000);
+      padding-top: 50px;
+      min-width: 20%;
+      max-width: 25%;
+      height: 100%;
+      border: 1px solid rgb(185, 185, 185, 0.5);
+      border-left: 0px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: fixed;
+      box-shadow: 1px 10px 15px rgb(0, 0, 0, 0.5);
+      z-index: 1;
+
+
+    }
+
+
+
+
+
+    .about {
+      background-color: rgba(240, 248, 255, 0.4);
+      width: 90%;
+      border-radius: 12px;
+      padding: 10px;
+      padding-top: 0px;
+      margin-top: 5px;
+    }
+
+    .mycontact {
+      background-color: rgba(240, 248, 255, 0.4);
+      width: 90%;
+      margin: 10px;
+      border-radius: 12px;
+      padding: 10px;
+      padding-top: 0px;
+      margin-top: auto;
+
+
+    }
+
+
+    .skills {
+      justify-items: center;
+      align-items: center;
+      display: flex;
+      flex-direction: row;
+      font-weight: bold;
+      font-size: 24px;
+      margin-top: auto;
+      margin: 10px;
+      background-color: rgb(255, 183, 183);
+      border-radius: 13px;
+    }
+
+    .contact {
+      border: 2px solid black;
+      background-color: rgba(192, 192, 192, 0.5);
+      font-size: 24px;
+      margin: 5px;
+      padding: 5px;
+      color: rgb(0, 0, 0);
+      text-shadow: 0 0 0.2em #87F;
+      border-radius: 12px;
+
+      margin-bottom: 20px;
+    }
+
+
+    .mycontact:hover,
+    .about:hover,
+    #comment:hover,
+    #email:hover {
+      background-color: rgba(250, 235, 215, 0.2);
+      transition: all 0.3s ease-in-out;
+
+    }
+
+    h2,
+    h3 {
+      margin-bottom: 1px;
+    }
+    #comment {
+
+    }
+
+
+    #comment,
+    #email {
+      width: 100%;
+      border: none;
+      background-color: rgba(255, 255, 255, 0.5);
+      resize: none;
+      margin-top: 4px;
+
+    }
+
+
+    input[type=submit] {
+      color: white;
+      background-color: rgba(36, 255, 255, 0.7);
+      width: 20%;
+      height: 30px;
+      border: none;
+      border-radius: 16px;
+      cursor: pointer;
+      margin-left: 80%;
+    }
+
+    input[type=submit]:active {
+      color: black;
+      background-color: blue;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .mid-side {
+      color: white;
+
+      margin: 0px;
+      padding: 0px;
+      padding-top: 30px;
+      margin-left: 25%;
+      width: 74%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      z-index: 0;
+
+
+    }
+
+    #projects {
+      padding: 10px;
+      margin: 5px;
+      
+      height: 300px;
+    }
+
+
+    #lo {
+      background-color: rgb(31, 31, 31);
+      text-shadow: 0 0 0.5em rgb(136, 119, 255);
+      padding: 5px;
+      border-radius: 12px;
+      width: 250px;
+
+
+    }
+
+    
+    .web:hover {
+      background-color: rgba(110, 110, 110, 0.214);
+      color: white;
+    }
+
+    .img {
+      margin: 0px;
+      width: 100%;
+      padding: 0px;
+
+    }
+
+    .img2 {
+      margin: 0px;
+      height: 100px;
+      width: 100px;
+      padding: 10px;
+    }
+
+
+    .web {
+      background-color: aliceblue;
+      color: black;
+      text-decoration: none;
+      padding: 0 30px;
+      margin: 5px;
+
+      justify-items: center;
+      border-radius: 36px;
+    }
+
+    #login {
+
+      background-color: black;
+      justify-items: center;
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      font-weight: bold;
+      font-size: 24px;
+      padding: 20px;
+      margin: 10px;
+      margin-right: 0px;
+      padding-right: 0px;
+      margin-top: 20px;
+      margin-bottom: 0px;
+      width: 100%;
+      border-top: 0.5px solid rgba(255, 255, 255, 0.548);
+      border-bottom: 0.5px solid rgba(255, 255, 255, 0.548);
+    }
+
+
+    #airbnb {
+      background-color: black;
+      justify-items: center;
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      font-weight: bold;
+      font-size: 24px;
+      padding: 20px;
+      margin: 10px;
+      margin-right: 0px;
+      padding-right: 0px;
+      margin-top: 0px;
+      margin-bottom: 0px;
+      border-bottom: 0.5px solid rgba(255, 255, 255, 0.548);
+    }
+
+    #twitter {
+
+      background-color: black;
+
+      justify-items: center;
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      font-weight: bold;
+      font-size: 24px;
+      padding: 20px;
+      margin: 10px;
+      margin-right: 0px;
+      padding-right: 0px;
+      margin-top: 0px;
+      margin-bottom: 0px;
+      border-bottom: 0.5px solid rgba(255, 255, 255, 0.548);
+    }
+
+    .box {
+      border: 0.5px solid rgb(170, 170, 170, 0.3);
+      border-radius: 12px;
+      min-height: 400px;
+      max-height: 600px;
+      width: 90%;
+      overflow: auto;
+      background-color: transparent;
+      box-shadow: 1px 10px 15px rgb(0, 0, 0, 0.5);
+
+      margin-top: 50px;
+
+
+    }
+
+    .here {
+      margin: 10px;
+      width: 100%;
+
+    }
+
+    #goto {
+      margin: 20px;
+      font-weight: bold;
+      font-size: 22px;
+      
+    }
+
+    .go-to {
+      text-shadow: 0 0 0.5em #87F;
+      margin: 0px 5px;
+      padding: 15px;
+      border-left: 0px;
+      border-radius: 20px;
+      border-right: 1px solid white;
+      border-left: 1px solid white;
+    }
+
+
+    .go-to:hover {
+      background-color: rgba(255, 255, 255, 0.376);
+      padding: 15px;
+
+
+    }
+    #next {padding-left: 50px;}
+  </style>
+</head>
+
+
+<body>
+
+  <div class="top">
+
+    <a class="name" href="#">Hi I'm Nathaphong Wongsri</a>
+
+    <div id="mode">
+
+      <label class="swith">
+
+        <input type="checkbox" />
+        <div class="slider"></div>
+
+      </label>
+
+    </div>
+
+  </div>
+  <a href="#"><img id="to-top" src="https://img.in.th/images/7dc8629af6d176804a76fb14e00d6c0d.png" border="0" />
+  </a>
+
+
+  <div class="left-side">
+    <h2>Front-end Developer</h2>
+
+    <div class="about">
+
+      <h2>About</h2>
+      <span>My nickname is Nior I'm 27 years old.</span>
+      <span>Graduated becheler Econimics and now studying Master degree Marketing.</span>
+      <br>
+      <span>And I learn about Coding HTML and CSS from Westride academy</span>
+      <br><span>Look! on right side is My projects and if you intereted my skills please contact me! on Contact
+        box in left and bottom side</span>
+    </div>
+    <div class="skills">
+        <img class="img2" src="https://www.img.in.th/images/da53f2ce4863868508e0db0883308aa9.png">
+        <img class="img2" src="https://www.img.in.th/images/c3a751b029b10262aafce32ace1d141c.png">
+
+    </div>
+    <div class="mycontact">
+      <h3>My contact</h3>
+      <span><b>E-mail :</b> Nathaphong.won@gmail.com</span><br>
+      <span><b>Tel :</b> 098-014-5623</span>
+    </div>
+    <div class="contact">
+      <span>Contact</span>
+      <input type="textbox" id="email" placeholder="E-mail">
+      <textarea id="comment" name="Comment" rows="3" cols="40" placeholder="Comment"></textarea>
+      <input type="submit">
+    </div>
+
+
+
+    
+  </div>
+
+  <div class="mid-side">
+    <div id="projects">
+
+      <h1 id="lo">The Projects</h1>
+      <!--อธิบายโปรเจคที่เคยทำ ถ้าเป็นโคลนโปรเจค น่าจะได้มั้ง
+        อธิบายว่าใช้อะไรทำบ้าง Build with : React, Materialize, CSS framework, Firebase 
+        เหมือนแบบอธิบายว่าเราใช้สกิลอะไรบ้างในการทำส่วนนี้-->
+      <span id="goto">Go to</span>
+      
+
+        <a class="go-to" href="#login">Login</a>
+        <a class="go-to" href="#airbnb">Airbnb</a>
+        <a class="go-to" href="#twitter">Twitter </a>
+      
+
+    </div>
+
+
+    <div id="login">
+      <div class="box">
+        <img class="img" src="https://www.img.in.th/images/d6829db8799f8129daba694e1fdd034e.png">
+      </div>
+      <div class="here">
+        <a class="web" href="C:\Users\nowon\Desktop\Web Developer\Project\Login\Login.html" target="_blank">login</a>
+        <span>Build with HTML and CSS</span>
+      </div>
+
+    </div>
+
+    <div id="airbnb">
+      <div class="box">
+        <img class="img" src="https://www.img.in.th/images/961b45e4451e283394ead74b63d057e2.png">
+      </div>
+      <div class="here">
+        <a class="web" href="file:///C:/Users/nowon/Desktop/Web%20Developer/Project/airbnb/airbnb.html"
+          target="_blank">Airbnb</a>
+        <span>Build with HTML and CSS</span>
+      </div>
+
+    </div>
+
+    <div id="twitter">
+      <div class="box">
+        <img class="img" src="https://www.img.in.th/images/ee97024d1527a2dfaed9a2fa7a7c93de.png">
+      </div>
+      <div class="here">
+        <a class="web" href="C:\Users\nowon\Desktop\Web Developer\Project\Twitter\Twitter.HTML" target="_blank">Twitter
+        </a>
+        <span>Build with HTML and CSS</span>
+      </div>
+
+    </div>
+
+
+    <!-- ใส่โลโก้ไอคอนแอปที่ทำได้ -->
+
+<div id="next">
+
+  <h2>Next Projects</h2>
+  
+  <div>
+    <span>Programming blog</span>
+    <!--ทำเว็บบล็อค-->
+  </div>
+
+
+    <div>
+
+      <span>E-commerce website</span>
+      
+      <!--สร้างเว็บขายของ โชว์การใช้react ทำstate-->
+    </div>
+    
+    <div>
+
+      <span>Concept website</span>
+      <!--โชว์สกิลCSS Animate CSS ทำภาพเคลื่อนไหวขณะเลื่อนสกอเม้าลงเพจ-->
+    </div>
+    
+    
+  </div>
+
+  
+</div>
+
+  <!--คอนแทรคฟอร์ม เป็นช่องกรอกอีเมล์ ข้อความ แทรกinput
+      แนบอีเมล์เราไว้ต่างหากก็ดี-->
+
+
+
+
+
+
+  <!--ใส่ไอคอนลิ้งไปโซเชี่ยลมีเดีล หรือเว็บสมัครงานด้วย-->
+
+
+
+
+
+
+
+</body>
+
+</html>
